@@ -61,7 +61,7 @@ regd_users.post("/login", (req, res) => {
     }
     const accessToken = jwt.sign({ data: username }, 'access', { expiresIn: 60 * 60 });
     req.session.authorization = { accessToken, username };
-    return send(res, { message: "User successfully logged in" });
+    return send(res, { message: "Login successfull!", username: username, status: "Registered user logged in" });
 });
 
 // Task 9: add or modify a review
